@@ -71,12 +71,14 @@
     if($verifica_reservas->num_rows == 0) {
         $sql = "CREATE TABLE reservas (
         id INT(11) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
-        usuario_id INT(11),
-        livro_id INT(11),
+        usuario_id INT(11) UNSIGNED,
+        livro_id INT(11) UNSIGNED,
         data_reserva TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         data_devolucao DATE,
         data_retirada DATE,
-        status ENUM('reservado', 'retirado', 'devolvido') DEFAULT 'reservado'                
+        status ENUM('reservado', 'retirado', 'devolvido') DEFAULT 'reservado',
+        FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE,
+        FOREIGN KEY (livro_id) REFERENCES livros(id) ON DELETE CASCADE             
         )";
 
         if($conn->query($sql) === TRUE) {
@@ -85,6 +87,9 @@
             echo "Erro ao criar a tabela: ". $conn->error. "</br>";
         } 
     
+    
+
+
     } else {
         echo "A tabela $tabela_reservas já existe.</br>";
     }
