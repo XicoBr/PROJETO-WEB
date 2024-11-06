@@ -22,6 +22,7 @@ require_once 'config.php';
             <a href="novo_livro.php" class="btn btn-primary mr-2">Novo Livro</a>
             <a href="historico_emprestimos.php" class="btn btn-primary mr-2">Histórico de Empréstimos</a>
             <a href="login.php" class="btn btn-primary">Login</a>
+            <a href="emprestimos.php" class="btn btn-primary">Empréstimos</a>
         </div>
     </div>
 </body>
