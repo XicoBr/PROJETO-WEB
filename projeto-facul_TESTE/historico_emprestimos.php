@@ -5,10 +5,10 @@ require_once 'config.php';
 
 $sql = "SELECT 
          r.id,
-         u.nome AS usuario,
-         l.titulo AS livro,
-         r.data_retirada,
-         r.data_devolucao
+         u.nome AS usuario,  /* usuario.nome */
+         l.titulo AS livro,  /* livro.titulo */
+         r.data_retirada,  /* reserva.data_retirada */
+         r.data_devolucao  
        FROM reservas r
        JOIN usuarios u ON r.usuario_id = u.id
        JOIN livros l ON r.livro_id = l.id";

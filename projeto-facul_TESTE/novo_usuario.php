@@ -6,7 +6,7 @@ require_once 'config.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST["nome"];
     $email = $_POST["email"];
-    $senha = $_POST["senha"];
+    $senha = md5($_POST["senha"]);  // senha criptografada
 
     $sql = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
     if ($conn->query($sql) === TRUE) {
