@@ -15,7 +15,6 @@
             <a href="novo_usuario.php" class="btn btn-primary mr-2">Novo Usuário</a>
             <a href="novo_livro.php" class="btn btn-primary mr-2">Novo Livro</a>
             <a href="historico_emprestimos.php" class="btn btn-primary mr-2">Histórico de Empréstimos</a>
-            <a href="login.php" class="btn btn-primary mr-2">Login</a>
             <a href="emprestimos.php" class="btn btn-primary mr-2">Empréstimos</a>
             <a href="livros.php" class="btn btn-primary mr-2">Gerenciar Livros</a>
         </div>
