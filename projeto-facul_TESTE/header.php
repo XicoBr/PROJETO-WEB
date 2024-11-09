@@ -16,5 +16,6 @@
             <a href="historico_emprestimos.php" class="btn btn-primary mr-2">Histórico de Empréstimos</a>
             <a href="login.php" class="btn btn-primary">Login</a>
             <a href="emprestimos.php" class="btn btn-primary">Empréstimos</a>
+            <a href="livros.php" class="btn btn-primary">Gerenciar Livros</a>
         </div>
     </div>
