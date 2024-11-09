@@ -1,5 +1,6 @@
 <!-- livros.php -->
 <?php
+include 'header.php';
 require_once 'config.php';
 
 // Processar a exclusão
@@ -51,17 +52,7 @@ $result = $conn->query($sql);
     <title>Gerenciar Livros</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-<body>
-    <div class="container my-5">
-        <h1 class="text-center mb-4">Bem-vindo ao Sistema de Reserva de Livros</h1>
-        <div class="text-center mb-4">
-            <a href="novo_usuario.php" class="btn btn-primary mr-2">Novo Usuário</a>
-            <a href="novo_livro.php" class="btn btn-primary mr-2">Novo Livro</a>
-            <a href="historico_emprestimos.php" class="btn btn-primary mr-2">Histórico de Empréstimos</a>
-            <a href="login.php" class="btn btn-primary mr-2">Login</a>
-            <a href="emprestimos.php" class="btn btn-primary mr-2">Empréstimos</a>
-            <a href="livros.php" class="btn btn-primary mr-2">Gerenciar Livros</a>
-        </div>
+
 
         <?php if (isset($message)): ?>
             <div class="alert alert-<?php echo $message['type']; ?> alert-dismissible fade show" role="alert">
