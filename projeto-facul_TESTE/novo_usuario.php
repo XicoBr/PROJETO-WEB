@@ -3,6 +3,9 @@
 include 'header.php';
 require_once 'config.php';
 
+$showModal = false;
+$mensagem = '';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST["nome"];
     $email = $_POST["email"];
@@ -10,32 +13,60 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $sql = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
     if ($conn->query($sql) === TRUE) {
-        echo "Usuário cadastrado com sucesso!";
+        $mensagem = "Usuário cadastrado com sucesso!";
+        $showModal = true;
     } else {
-        echo "Erro ao cadastrar o usuário: " . $conn->error;
+        $showModal = true;
+        $mensagem =  "Erro ao cadastrar o usuário: " . $conn->error;
     }
 }
 ?>
 
 
 
-    <div class="container my-5">
-        <h1 class="text-center mb-4">Cadastro de Novo Usuário</h1>
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-            <div class="form-group">
-                <label for="nome">Nome</label>
-                <input type="text" class="form-control" id="nome" name="nome" required>
+<div class="container my-5">
+    <h1 class="text-center mb-4">Cadastro de Novo Usuário</h1>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control" id="nome" name="nome" required>
+        </div>
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="senha">Senha</label>
+            <input type="password" class="form-control" id="senha" name="senha" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Resultado do Cadastro</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" class="form-control" id="email" name="email" required>
+            <div class="modal-body">
+                <?php echo $mensagem; ?>
             </div>
-            <div class="form-group">
-                <label for="senha">Senha</label>
-                <input type="password" class="form-control" id="senha" name="senha" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
-        </form>
+        </div>
     </div>
+</div>
+
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<?php if ($showModal): ?>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var myModal = new bootstrap.Modal(document.getElementById('resultModal'));
+        myModal.show();
+    });
+</script>
+<?php endif; ?>
 </body>
 </html>

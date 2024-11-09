@@ -3,6 +3,9 @@
 include 'header.php';
 require_once 'config.php';
 
+$showModal = false;
+$mensagem = '';
+
 // Verificar se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuario_id = $_POST["usuario_id"];
@@ -14,9 +17,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$usuario_id', '$livro_id', '$data_retirada', '$data_devolucao')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Empréstimo realizado com sucesso!";
+        $mensagem = "Empréstimo realizado com sucesso!";
+        $showModal = true;
     } else {
-        echo "Erro ao realizar o empréstimo: " . $conn->error;
+        $showModal = true;
+        $mensagem = "Não foi possível realizar o empréstimo";
     }
 }
 
@@ -70,5 +75,31 @@ $result_livros = $conn->query($sql_livros);
             <button type="submit" class="btn btn-primary">Realizar Empréstimo</button>
         </form>
     </div>
+    <!-- Modal -->
+<div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Resultado do Cadastro</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <?php echo $mensagem; ?>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<?php if ($showModal): ?>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var myModal = new bootstrap.Modal(document.getElementById('resultModal'));
+        myModal.show();
+    });
+</script>
+<?php endif; ?>
 </body>
 </html>
