@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
 
 // Processar cadastro
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cadastro'])) {
-    $nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_STRING);
+    $nome = $_POST["nome"];
     $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
     $senha = md5($_POST["senha"]); // Usando MD5 para manter compatibilidade
 
@@ -66,6 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cadastro'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
     <style>
+        
         body {
             background-color: #f8f9fa;
         }
