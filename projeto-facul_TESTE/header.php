@@ -19,17 +19,30 @@
         }
         .footer {
             transition: 0.4s;
+            padding: 1rem 0;
+            flex-shrink: 0;
+            width: 100%;
         }
         .footer:hover {
             color: #d6e3f8;
-            
+
+        }
+        #body
+        {
+            background: rgba(230, 255, 255, 1);
+            display: flex;
+            flex-direction: column;
+        }
+        #main
+        {
+            background-color: #F6F0ED;
         }
     </style>
 </head>
-<body>
+<body id="body">
 
-    <div class="container my-5">
-        <div class="card">
+    <div class="container my-1">
+        <div id="main" class="card">
             <div class="card-body p-4">
                 <!-- Logo e Título -->
                 <div class="text-center mb-4">
@@ -39,7 +52,7 @@
                     <h2 class="mb-3">LOCALIVRO</h2>
                 </div>        
         <div class="text-center mb-4">
-            
+
             <a href="novo_usuario.php" class="btn btn-primary mr-2">Novo Usuário</a>
             <a href="novo_livro.php" class="btn btn-primary mr-2">Novo Livro</a>
             <a href="historico_emprestimos.php" class="btn btn-primary mr-2">Histórico de Empréstimos</a>
