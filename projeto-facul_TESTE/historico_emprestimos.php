@@ -50,5 +50,7 @@ $result = $conn->query($sql);
             </table>
         </div>
     </div>
-</body>
-</html> 
+
+<?php 
+    include 'footer.php';
+?>

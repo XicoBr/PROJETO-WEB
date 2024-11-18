@@ -101,5 +101,7 @@ $result_livros = $conn->query($sql_livros);
     });
 </script>
 <?php endif; ?>
-</body>
-</html>
+
+<?php 
+    include 'footer.php';
+?>

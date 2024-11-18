@@ -34,5 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit" class="btn btn-primary">Entrar</button>
         </form>
     </div>
-</body>
-</html>
+
+<?php 
+    include 'footer.php';
+?>

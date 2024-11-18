@@ -17,6 +17,13 @@
             color: #0d6efd;
             margin-bottom: 1rem;
         }
+        .footer {
+            transition: 0.4s;
+        }
+        .footer:hover {
+            color: #d6e3f8;
+            
+        }
     </style>
 </head>
 <body>
