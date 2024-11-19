@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cadastro'])) {
         }
         .login-container {
             max-width: 400px;
-            margin: 50px auto;
+            margin: 100px auto;
         }
         .card {
             border: none;

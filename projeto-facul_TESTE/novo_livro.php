@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     
-<div class="container my-5">
+<div class="container  min-height-content">
     <h1 class="text-center mb-4">Cadastro de Novo Livro</h1>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <div class="form-group">
@@ -43,8 +43,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="form-group">
             <label for="ano">Ano</label>
             <input type="number" class="form-control" id="ano" name="ano" required>
+            <button type="submit" class="form-btn btn btn-primary">Cadastrar livro</button>
         </div>
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
     </form>
 </div>
 <!-- Modal -->

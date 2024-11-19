@@ -44,18 +44,11 @@ $sql = "SELECT id, titulo, autor, editora, ano FROM livros";
 $result = $conn->query($sql);
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciar Livros</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
+
 
 
         <?php if (isset($message)): ?>
-            <div class="alert alert-<?php echo $message['type']; ?> alert-dismissible fade show" role="alert">
+            <div class="text-center alert alert-<?php echo $message['type']; ?> alert-dismissible fade show" style="margin-top: -59px" role="alert">
                 <?php echo $message['text']; ?>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -63,47 +56,49 @@ $result = $conn->query($sql);
             </div>
         <?php endif; ?>
 
-        <h2 class="text-center mb-4">Gerenciar Livros</h2>
-        <div class="table-responsive">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Título</th>
-                        <th>Autor</th>
-                        <th>Editora</th>
-                        <th>Ano</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    if ($result->num_rows > 0) {
-                        while($row = $result->fetch_assoc()) {
-                            echo "<tr>";
-                            echo "<td>" . $row["id"] . "</td>";
-                            echo "<td>" . $row["titulo"] . "</td>";
-                            echo "<td>" . $row["autor"] . "</td>";
-                            echo "<td>" . $row["editora"] . "</td>";
-                            echo "<td>" . $row["ano"] . "</td>";
-                            echo "<td>
-                                    <form method='POST' class='d-inline' onsubmit='return confirm(\"Tem certeza que deseja excluir este livro?\");'>
-                                        <input type='hidden' name='delete_id' value='" . $row["id"] . "'>
-                                        <button type='submit' class='btn btn-danger btn-sm'>
-                                            Excluir
-                                        </button>
-                                    </form>
-                                  </td>";
-                            echo "</tr>";
+        <div class="container min-height-content">
+            <h2 class="text-center">Gerenciar Livros</h2>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Título</th>
+                            <th>Autor</th>
+                            <th>Editora</th>
+                            <th>Ano</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        if ($result->num_rows > 0) {
+                            while($row = $result->fetch_assoc()) {
+                                echo "<tr>";
+                                echo "<td>" . $row["id"] . "</td>";
+                                echo "<td>" . $row["titulo"] . "</td>";
+                                echo "<td>" . $row["autor"] . "</td>";
+                                echo "<td>" . $row["editora"] . "</td>";
+                                echo "<td>" . $row["ano"] . "</td>";
+                                echo "<td>
+                                        <form method='POST' class='d-inline' onsubmit='return confirm(\"Tem certeza que deseja excluir este livro?\");'>
+                                            <input type='hidden' name='delete_id' value='" . $row["id"] . "'>
+                                            <button type='submit' class='btn btn-danger btn-sm'>
+                                                Excluir
+                                            </button>
+                                        </form>
+                                      </td>";
+                                echo "</tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='6' class='text-center'>Nenhum livro cadastrado.</td></tr>";
                         }
-                    } else {
-                        echo "<tr><td colspan='6' class='text-center'>Nenhum livro cadastrado.</td></tr>";
-                    }
-                    ?>
-                </tbody>
-            </table>
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+                </div>
         </div>
-    </div>
 
 <?php 
     include 'footer.php';

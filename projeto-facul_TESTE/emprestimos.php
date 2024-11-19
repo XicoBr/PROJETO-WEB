@@ -35,7 +35,7 @@ $result_livros = $conn->query($sql_livros);
 
 
 
-    <div class="container my-5">
+    <div class="container min-height-content">
         <h1 class="text-center mb-4">Novo Empréstimo</h1>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             <div class="form-group">
@@ -71,10 +71,11 @@ $result_livros = $conn->query($sql_livros);
             <div class="form-group">
                 <label for="data_devolucao">Data de Devolução</label>
                 <input type="date" class="form-control" id="data_devolucao" name="data_devolucao" required>
+                <button type="submit" class="form-btn col-6 col-md-4 btn btn-primary">Realizar Empréstimo</button>
             </div>
-            <button type="submit" class="btn btn-primary">Realizar Empréstimo</button>
         </form>
     </div>
+
     <!-- Modal -->
 <div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog">

@@ -17,8 +17,8 @@ $result = $conn->query($sql);
 
 
     
-    <div class="container my-5">
-        <h1 class="text-center mb-4">Histórico de Empréstimos</h1>
+    <div class="container  min-height-content">
+        <h1 class="text-center">Histórico de Empréstimos</h1>
         <div class="table-responsive">
             <table class="table table-striped">
                 <thead>
