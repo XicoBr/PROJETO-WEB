@@ -90,7 +90,7 @@
     </style>
 </head>
 <body>
-    <div class="content-wrapper">
+    <div class="content-wrapper sticky-top">
         <header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-black">
                 <div class="container-fluid">

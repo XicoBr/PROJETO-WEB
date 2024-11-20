@@ -17,7 +17,7 @@ $result = $conn->query($sql);
 
 
     
-    <div class="container  min-height-content">
+    <div class="container  min-height-content overflow-y-auto" style="height: 400px">
         <h1 class="text-center">Histórico de Empréstimos</h1>
         <div class="table-responsive">
             <table class="table table-striped">
@@ -30,7 +30,7 @@ $result = $conn->query($sql);
                         <th>Data Devolução</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody >
                     <?php
                     if ($result->num_rows > 0) {
                         while($row = $result->fetch_assoc()) {

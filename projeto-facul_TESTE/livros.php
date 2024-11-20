@@ -56,7 +56,7 @@ $result = $conn->query($sql);
             </div>
         <?php endif; ?>
 
-        <div class="container min-height-content">
+        <div class="container min-height-content  overflow-y-auto" style="height: 400px">
             <h2 class="text-center">Gerenciar Livros</h2>
             <div class="table-responsive">
                 <table class="table table-striped">
