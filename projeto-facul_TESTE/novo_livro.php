@@ -25,25 +25,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     
-<div class="container  min-height-content">
+<div class="container min-height-content formulario  p-4" style="width: 500px; background-color: #FFFEFA;  border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
     <h1 class="text-center mb-4">Cadastro de Novo Livro</h1>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <div class="form-group">
-            <label for="titulo">Título</label>
+            <label for="titulo">Título:</label>
             <input type="text" class="form-control" id="titulo" name="titulo" required>
         </div>
         <div class="form-group">
-            <label for="autor">Autor</label>
+            <label for="autor">Autor:</label>
             <input type="text" class="form-control" id="autor" name="autor" required>
         </div>
         <div class="form-group">
-            <label for="editora">Editora</label>
+            <label for="editora">Editora:</label>
             <input type="text" class="form-control" id="editora" name="editora" required>
         </div>
         <div class="form-group">
-            <label for="ano">Ano</label>
+            <label for="ano">Ano:</label>
             <input type="number" class="form-control" id="ano" name="ano" required>
-            <button type="submit" class="form-btn btn btn-primary">Cadastrar livro</button>
+            <button type="submit" class="form-btn btn btn-primary col-md-7">Cadastrar livro</button>
         </div>
     </form>
 </div>

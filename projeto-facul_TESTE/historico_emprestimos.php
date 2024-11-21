@@ -17,7 +17,7 @@ $result = $conn->query($sql);
 
 
     
-    <div class="container  min-height-content overflow-y-auto" style="height: 400px">
+    <div class="container  min-height-content overflow-y-auto p-2" style="height: 400px;box-shadow: 0 0 20px rgba(0,0,0,0.15); border-radius: 6px">
         <h1 class="text-center">Histórico de Empréstimos</h1>
         <div class="table-responsive">
             <table class="table table-striped">

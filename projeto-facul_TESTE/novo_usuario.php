@@ -24,21 +24,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-<div class="container formulario min-height-content">
+<div class="container min-height-content formulario  p-4" style="width: 500px; background-color: #FFFEFA;  border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
     <h1 class="text-center mb-4">Cadastro de Novo Usuário</h1>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-        <div class="form-group">
-            <label for="nome">Nome</label>
+        <div class="form-group formulario">
+            <label for="nome">Nome:</label>
             <input type="text" class="form-control" id="nome" name="nome" required>
         </div>
         <div class="form-group">
-            <label for="email">E-mail</label>
+            <label for="email">E-mail:</label>
             <input type="email" class="form-control" id="email" name="email" required>
         </div>
         <div class="form-group">
-            <label for="senha">Senha</label>
+            <label for="senha">Senha:</label>
             <input type="password" class="form-control" id="senha" name="senha" required>
-            <button type="submit" class="form-btn btn btn-primary">Cadastrar usuário</button>
+            <button type="submit" class="form-btn btn col-md-7 btn-primary">Cadastrar usuário</button>
         </div>
     </form>
 </div>

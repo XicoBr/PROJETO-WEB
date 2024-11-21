@@ -80,10 +80,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cadastro'])) {
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
         }
         .logo {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-size: 2.5rem;
             color: #0d6efd;
             margin-bottom: 1rem;
-        }
+        }        
     </style>
 </head>
 <body>

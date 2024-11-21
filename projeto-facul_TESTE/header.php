@@ -8,11 +8,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
     <style>
-        * {
+        * {            
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            --btn-prim-cor01: #236C3B;
+            --btn-prim-cor02: #1b512d;
+            --btn-dng-cor01: #bd2038;
+            --btn-dng-cor02: #96182B;
+            --body-cor: #f6f0de;
         }
 
         html {
@@ -26,13 +31,13 @@
             min-height: 100vh;
             margin: 0;
             padding: 0;
-            background-color: #f6f0de;
+            background-color: var(--body-cor);
         }
-
+       
         .content-wrapper {
             flex: 1 0 auto;
             width: 100%;
-            padding-bottom: 60px; /* Altura do footer + espaço extra */
+            padding-bottom: 0; /* Altura do footer + espaço extra */
         }
 
         .logo {
@@ -43,21 +48,25 @@
         
         .footer {
             transition: 0.4s;
+            margin-top: 20px;
         }
 
-        .footer:hover {
-            color: #d6e3f8;
+        .footer i:hover {
+            color: var(--btn-prim-cor01);
         }
-
+        
         .form-group {
             display: flex;
             flex-direction: column;
             justify-content: center;
             justify-items: center;
-            width: 50%;
+            width: 80%;
             margin: auto;
             text-align: left;
-            margin-bottom: 5px;
+            padding: 20px;
+        }
+        .formulario {
+            margin-top: 20px;
         }
         
         .form-btn {
@@ -65,8 +74,21 @@
             flex-direction: row;
             justify-content: center;
             justify-items: auto;
-            width: fit-content;
-            margin-top: 5px;
+            width: auto;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .btn-primary {
+            background-color: var(--btn-prim-cor01);
+        }
+        .btn-primary:hover {
+            background-color: var(--btn-prim-cor02);
+        }
+        .btn-danger {
+            background-color: var(--btn-dng-cor01);
+        }
+        .btn-danger:hover {
+            background-color: var(--btn-dng-cor02);
         }
 
         footer {
@@ -79,13 +101,11 @@
             color: white;
         }
 
-        .main-content {
-            padding: 2rem 0;
-        }
+        
 
         /* Nova classe para garantir que o conteúdo principal tenha altura mínima */
         .min-height-content {
-            min-height: calc(100vh - 200px); /* 60px é a altura aproximada do footer */
+            min-height: calc(100vh - 180px); /* 60px é a altura aproximada do footer */
         }
         #corlogin {
             background-color: #000000;

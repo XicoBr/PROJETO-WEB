@@ -35,11 +35,11 @@ $result_livros = $conn->query($sql_livros);
 
 
 
-    <div class="container min-height-content">
+    <div class="container min-height-content formulario  p-4" style="width: 500px; background-color: #FFFEFA;  border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
         <h1 class="text-center mb-4">Novo Empréstimo</h1>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             <div class="form-group">
-                <label for="usuario_id">Usuário</label>
+                <label for="usuario_id">Usuário:</label>
                 <select class="form-control" id="usuario_id" name="usuario_id" required>
                     <option value="">Selecione o usuário</option>
                     <?php
@@ -52,7 +52,7 @@ $result_livros = $conn->query($sql_livros);
                 </select>
             </div>
             <div class="form-group">
-                <label for="livro_id">Livro</label>
+                <label for="livro_id">Livro:</label>
                 <select class="form-control" id="livro_id" name="livro_id" required>
                     <option value="">Selecione o livro</option>
                     <?php
@@ -65,13 +65,13 @@ $result_livros = $conn->query($sql_livros);
                 </select>
             </div>
             <div class="form-group">
-                <label for="data_retirada">Data de Retirada</label>
+                <label for="data_retirada">Data de Retirada:</label>
                 <input type="date" class="form-control" id="data_retirada" name="data_retirada" required>
             </div>
             <div class="form-group">
-                <label for="data_devolucao">Data de Devolução</label>
+                <label for="data_devolucao">Data de Devolução:</label>
                 <input type="date" class="form-control" id="data_devolucao" name="data_devolucao" required>
-                <button type="submit" class="form-btn col-6 col-md-4 btn btn-primary">Realizar Empréstimo</button>
+                <button type="submit" class="form-btn col-6 col-md-7 btn btn-primary" >Realizar Empréstimo</button>
             </div>
         </form>
     </div>
