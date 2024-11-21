@@ -6,7 +6,6 @@
     <title>Biblioteca - Sistema de Reserva de Livros</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         * {
@@ -27,6 +26,7 @@
             min-height: 100vh;
             margin: 0;
             padding: 0;
+            background-color: #f6f0de;
         }
 
         .content-wrapper {
@@ -86,6 +86,9 @@
         /* Nova classe para garantir que o conteúdo principal tenha altura mínima */
         .min-height-content {
             min-height: calc(100vh - 200px); /* 60px é a altura aproximada do footer */
+        }
+        #corlogin {
+            background-color: #000000;
         }
     </style>
 </head>
