@@ -48,7 +48,7 @@ $result = $conn->query($sql);
 
 
         <?php if (isset($message)): ?>
-            <div class="text-center alert alert-<?php echo $message['type']; ?> alert-dismissible fade show" style="margin-top: -59px" role="alert">
+            <div class="text-center alert alert-<?php echo $message['type']; ?> alert-dismissible fade show" style="margin-top: 10px" role="alert">
                 <?php echo $message['text']; ?>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -56,7 +56,7 @@ $result = $conn->query($sql);
             </div>
         <?php endif; ?>
 
-        <div class="container min-height-content  overflow-y-auto p-2" style="height: 400px; box-shadow: 0 0 20px rgba(0,0,0,0.15); border-radius: 6px">
+        <div class="container min-height-content  overflow-y-auto p-3" style="height: 400px; box-shadow: 0 0 20px rgba(0,0,0,0.15); border-radius: 6px">
             <h2 class="text-center">Gerenciar Livros</h2>
             <div class="table-responsive">
                 <table class="table table-striped">
