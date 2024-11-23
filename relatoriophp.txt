@@ -1,0 +1,94 @@
+PROJETO LOCADORA DE LIVROS
+
+O site possui uma página de login, uma para fazer novas reservas de livros, uma para implementar um novo livro, uma para um novo usuário e uma para gerenciar livros (saber se deseja excluir eles).
+
+	1. config.php
+
+Descrição Geral:
+Este código configura o ambiente para uma aplicação web que interage com um banco de dados. Ele configura a conexão ao banco de dados, garante que o banco de dados necessário existe, cria tabelas (livros, usuarios, e reservas) se ainda não estiverem criadas.
+
+Funcionalidade Principal:
+Definir as Credenciais do Banco de Dados: O arquivo contém variáveis que armazenam as informações necessárias para conectar ao banco de dados
+Estabelecer a Conexão com o Banco de Dados: O arquivo utiliza a função new mysqli() para criar uma nova conexão com o banco de dados, utilizando as credenciais definidas nas variáveis.
+Verificação de Erros na Conexão: Após a tentativa de conexão, o arquivo verifica se houve algum erro com a conexão. Caso haja algum problema, o script interrompe a execução e exibe uma mensagem de erro.
+
+	2. emprestimos.php
+
+Descrição Geral:
+Este código implementa a funcionalidade de registrar novos empréstimos de livros em um sistema de gerenciamento de biblioteca. Ele gera um formulário para registrar empréstimos, permitindo selecionar usuários e livros cadastrados, insere as informações de empréstimos na tabela reservas, exibe mensagens de sucesso ou falha utilizando um modal.
+
+Funcionalidade Principal:
+Exibição de Empréstimos Ativos: O arquivo busca e exibe todos os empréstimos de livros realizados. A consulta retorna os dados de empréstimos, incluindo informações como o título do livro, o nome do usuário que fez o empréstimo, a data de empréstimo e a data de devolução.
+Formulário de Empréstimo: O arquivo exibe um formulário que permite ao administrador ou ao usuário autorizado registrar um novo empréstimo. O formulário envia as informações para o servidor via POST, e o sistema registra o novo empréstimo no banco de dados, armazenando dados como o livro emprestado, o usuário que fez o empréstimo, a data de retirada e a data de devolução.
+Atualização e Devolução de Empréstimos: Caso um livro seja devolvido, o sistema permite atualizar a situação do empréstimo. A devolução é processada e registrada no banco de dados, atualizando o status do empréstimo.
+Exclusão de Empréstimos: O arquivo permite a exclusão de registros de empréstimos, caso um empréstimo tenha sido registrado erroneamente ou necessite ser removido por outro motivo.
+Mensagens de Sucesso ou Erro: Após a realização de qualquer ação importante (como a inclusão, atualização ou exclusão de um empréstimo), o arquivo exibe uma mensagem de sucesso ou erro ao usuário, utilizando a interface gráfica do sistema.
+Exibição de Tabela de Empréstimos: O sistema exibe uma tabela com os empréstimos registrados no banco de dados, organizando as informações de maneira clara e acessível para o usuário.
+
+	3. footer.php
+
+Descrição Geral:
+Este código implementa o rodapé de uma página web (<footer>) com links para redes sociais e informações sobre direitos autorais. 
+
+Funcionalidade Principal:
+Inclusão do Rodapé Padrão: Ele é incluído no final de cada página PHP, geralmente utilizando o comando include 'footer.php';, o que permite manter o rodapé em todas as páginas sem a necessidade de repetição do código em cada arquivo.
+Estruturação da Página: Ao finalizar o layout da página, o footer.php é utilizado para fornecer uma estrutura visual e de conteúdo que finaliza o design da página, alinhando os elementos conforme o esperado no rodapé.
+
+	4. header.php
+
+Descrição Geral:
+O código define a estrutura básica de uma página HTML para o sistema "LocaLivro", que permite reservas e gestão de livros.
+
+Funcionalidade Principal:
+Inclusão do Cabeçalho Padrão: O arquivo header.php contém o código HTML necessário para renderizar o cabeçalho da página, como a barra de navegação, logo, links para páginas principais, entre outros.
+Estruturação da Navegação: O cabeçalho pode incluir uma barra de navegação (navbar) que permite ao usuário acessar as principais seções do site.
+
+	5. historico_emprestimos.php
+
+Descrição Geral:
+O código exibe um histórico de empréstimos registrados no sistema "LocaLivro".
+
+Funcionalidade Principal:
+Exibição do Histórico de Empréstimos: O arquivo busca informações no banco de dados sobre os empréstimos realizados, incluindo detalhes sobre o livro, o usuário e as datas de retirada e devolução.
+Consulta ao Banco de Dados: O código faz uma consulta SQL para buscar os dados de livros emprestados e suas respectivas informações de empréstimos. A consulta geralmente envolve a junção de várias tabelas, como a tabela de livros e a tabela de empréstimos, para garantir que as informações completas sejam mostradas.
+Mensagens de Feedback: Caso haja algum erro ao buscar os dados ou se não houver registros no histórico, o sistema pode exibir mensagens informando o usuário, como "Nenhum empréstimo encontrado" ou "Erro ao carregar os dados".
+
+	6. index.php
+
+Descrição Geral:
+O código serve como a página inicial do sistema "Localivro". Ele oferece duas funcionalidades principais: login de usuários e cadastro de novos usuários.
+
+Funcionalidade Principal:
+Exibição da Página Inicial: O arquivo index.php serve como ponto de entrada para o sistema, exibindo a interface inicial com informações e opções importantes.
+Verificação de Login ou Sessão do Usuário: O arquivo realiza a verificação de login do usuário, assegurando que apenas usuários autenticados possam acessar funcionalidades restritas.
+Mensagens de Feedback: Caso haja alguma notificação ou mensagem importante para o usuário, o arquivo pode exibir mensagens de alerta ou sucesso.
+
+	7. livros.php
+
+Descrição Geral:
+O código é responsável pela gestão dos livros cadastrados no sistema. Ele permite que o administrador visualize os livros, exclua livros (desde que não tenham reservas associadas) e exiba mensagens de sucesso ou erro.
+
+Funcionalidade Principal:
+Exibição de Livros: O código busca os livros cadastrados na base de dados e exibe-os em uma tabela.
+Exclusão de Livros: Permite excluir um livro, mas antes de proceder com a exclusão, verifica se o livro possui reservas associadas. Caso exista alguma reserva, o livro não pode ser excluído.
+Feedback ao Usuário: Após realizar a operação de exclusão, o sistema exibe uma mensagem (modal ou alerta) de sucesso ou erro.
+
+
+	8. novo_livro.php
+
+Descrição Geral:
+O código é responsável pelo cadastro de novos livros no sistema. Ele recebe informações sobre o título, autor, editora e ano de publicação, e as insere no banco de dados. Após o cadastro, uma mensagem de sucesso ou erro é exibida ao usuário.
+
+Funcionalidade Principal:
+Cadastro de Livro: O código permite o cadastro de novos livros através de um formulário HTML. Após o envio do formulário, os dados são processados e armazenados no banco de dados.
+Feedback ao Usuário: Após o cadastro, um modal é exibido com a mensagem de sucesso ou erro, dependendo do resultado da operação.
+
+	9. novo_usuario.php
+
+Descrição Geral:
+O código permite o cadastro de novos usuários no sistema. O formulário coleta informações como nome, e-mail e senha (criptografada), e as armazena na base de dados. Após o cadastro, uma mensagem de sucesso ou erro é exibida ao usuário por meio de um modal.
+
+Funcionalidade Principal:
+Cadastro de Usuário: O formulário coleta os dados do usuário (nome, e-mail, senha) e os insere na tabela usuarios do banco de dados.
+Criptografia de Senha: A senha fornecida pelo usuário é criptografada utilizando a função md5(), o que é uma prática insegura e desaconselhada.
+Feedback ao Usuário: O sistema exibe um modal com uma mensagem informando se o cadastro foi bem-sucedido ou se ocorreu um erro.
